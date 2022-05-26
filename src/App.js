@@ -8,6 +8,7 @@ import ToolDetails from './Pages/Home/ToolDetails';
 import ToolsCard from './Pages/Home/ToolsCard';
 import Login from './Pages/Login/Login';
 import RequireAuth from './Pages/Login/RequireAuth';
+import Signup from './Pages/Login/Signup';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path='/' element={<Home />}></Route>
         <Route path='/tools' element={<ToolsCard />}></Route>
         <Route path='/login' element={<Login />}></Route>
+        <Route path='/signup' element={<Signup />}></Route>
         <Route path='/tools/:toolId' element={<RequireAuth>
           <ToolDetails />
         </RequireAuth>}></Route>
