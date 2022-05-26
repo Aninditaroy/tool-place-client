@@ -1,8 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Tools = ({ tool }) => {
-    const { name, img, description, min_order_quantity, available_quantity, price
+    const { _id, name, img, description, min_order_quantity, available_quantity, price
     } = tool;
+    const navigateToToolId = (`/tools/${_id}`);
     return (
         <div class="mb-10 mx-10 lg:mx-0 lg:mb-0">
             <div class="max-w-md w-full bg-slate-200 shadow-lg rounded-xl p-6">
@@ -10,7 +12,7 @@ const Tools = ({ tool }) => {
                     <div class="">
                         <div class="relative h-62 w-full mb-3">
                             <div class="absolute flex flex-col top-0 right-0 p-3">
-                                <button class="transition ease-in duration-300 bg-gray-700 hover:bg-gray-800 border hover:border-gray-500 border-gray-700 hover:text-white  hover:shadow-lg text-black rounded-full w-9 h-9 text-center p-2">
+                                <button class="transition ease-in duration-300 bg-gray-100 hover:bg-gray-800 border hover:border-gray-500 border-gray-700 hover:text-white  hover:shadow-lg text-black rounded-full w-9 h-9 text-center p-2">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
@@ -45,11 +47,13 @@ const Tools = ({ tool }) => {
                                     <span class="hover:text-primary py-0 badge badge-md badge-accent">{available_quantity}</span>
                                 </div>
                             </div>
-                            <div class="flex space-x-2 text-sm font-medium justify-start">
-                                <button class="transition ease-in duration-300 inline-flex items-center text-sm font-medium mb-2 md:mb-0 bg-primary px-5 py-3 hover:shadow-lg tracking-wider text-white rounded-full hover:bg-primary ">
-                                    <span>Add Cart</span>
-                                </button>
-                            </div>
+                            <Link to={navigateToToolId}>
+                                <div class="flex space-x-2 text-sm font-medium justify-start">
+                                    <button class="transition ease-in duration-300 inline-flex items-center text-sm font-medium mb-2 md:mb-0 bg-primary px-5 py-3 hover:shadow-lg tracking-wider text-white rounded-full hover:bg-primary ">
+                                        <span>Add Cart</span>
+                                    </button>
+                                </div>
+                            </Link>
                         </div>
                     </div>
                 </div>
