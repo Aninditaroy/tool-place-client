@@ -12,7 +12,7 @@ const Navbar = () => {
     </>
     return (
         <div className=' lg:mx-auto'>
-            <div className="navbar w-full bg-gray-100 font-semibold">
+            <div className="navbar w-full bg-slate-100 font-semiboldmb-2">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex="0" className="btn btn-ghost lg:hidden">
@@ -22,7 +22,7 @@ const Navbar = () => {
                             {menuItems}
                         </ul>
                     </div>
-                    <Link className="lg:ml-6 " to='/'><img src={logo} alt="" className='' /></Link>
+                    <Link className="lg:ml-24 " to='/'><img src={logo} alt="" className='' /></Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal p-0">
