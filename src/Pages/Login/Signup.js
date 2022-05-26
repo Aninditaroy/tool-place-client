@@ -3,6 +3,7 @@ import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfil
 import auth from '../../firebase.init';
 import { useForm } from 'react-hook-form';
 import { useNavigate, Link } from 'react-router-dom';
+import Loading from '../Shared/Loading';
 
 const Signup = () => {
     const [
@@ -17,6 +18,9 @@ const Signup = () => {
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
     let signUpError;
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+    if (loading || gLoading || updating) {
+        return <Loading />
+    }
     if (error || gError || updateError) {
         signUpError = <p className="text-red-500"><small>{error?.message || gError?.message || updateError?.message}</small></p>
     }
