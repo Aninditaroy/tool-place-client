@@ -2,6 +2,7 @@ import React from 'react';
 import Banner from './Banner';
 import HomeTools from './HomeTools';
 import SummaryStat from './SummaryStat';
+import InfoCard from './InfoCard';
 
 const Home = () => {
     return (
@@ -9,6 +10,7 @@ const Home = () => {
             <Banner />
             <HomeTools />
             <SummaryStat />
+            <InfoCard />
         </div>
     );
 };

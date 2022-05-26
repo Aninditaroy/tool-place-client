@@ -50,7 +50,7 @@ const SummaryStat = () => {
                             </div>
                             <h1 class="text-3xl sm:text-4xl xl:text-5xl font-bold text-gray-700 mt-12 group-hover:text-gray-50">25+</h1>
                             <div class="flex flex-row justify-between group-hover:text-gray-200">
-                                <p>Shipped Cuntries</p>
+                                <p>Country Shipment</p>
                                 <span>
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary group-hover:text-gray-200"
                                         viewBox="0 0 20 20" fill="currentColor">
