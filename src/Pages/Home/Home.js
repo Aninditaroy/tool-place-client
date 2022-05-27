@@ -3,14 +3,16 @@ import Banner from './Banner';
 import HomeTools from './HomeTools';
 import SummaryStat from './SummaryStat';
 import InfoCard from './InfoCard';
+import Contact from './Contact';
 
 const Home = () => {
     return (
         <div className=''>
             <Banner />
             <HomeTools />
-            <SummaryStat />
             <InfoCard />
+            <SummaryStat />
+            <Contact />
         </div>
     );
 };
