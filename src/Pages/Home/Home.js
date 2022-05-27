@@ -4,6 +4,7 @@ import HomeTools from './HomeTools';
 import SummaryStat from './SummaryStat';
 import InfoCard from './InfoCard';
 import Contact from './Contact';
+import ShowReview from '../Dashboard/ShowReview';
 
 const Home = () => {
     return (
@@ -11,6 +12,7 @@ const Home = () => {
             <Banner />
             <HomeTools />
             <InfoCard />
+            <ShowReview />
             <SummaryStat />
             <Contact />
         </div>

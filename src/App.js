@@ -15,6 +15,7 @@ import NotFound from './Pages/NotFound/NotFound';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Dashboard from './Pages/Dashboard/Dashboard';
+import MyReview from './Pages/Dashboard/MyReview';
 
 function App() {
   return (
@@ -32,6 +33,10 @@ function App() {
         </RequireAuth>}></Route>
         <Route path="dashboard" element={<RequireAuth>
           <Dashboard />
+        </RequireAuth>}>
+        </Route>
+        <Route path="dashboard/review" element={<RequireAuth>
+          <MyReview />
         </RequireAuth>}>
         </Route>
         <Route path='*' element={<NotFound />}></Route>
