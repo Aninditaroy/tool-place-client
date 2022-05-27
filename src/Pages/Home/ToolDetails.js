@@ -94,7 +94,7 @@ const ToolDetails = () => {
                                     <span class="font-bold text-5xl leading-none align-baseline">{tool.price}</span>
                                 </div>
                                 <div class="inline-block align-bottom">
-                                    <button class="bg-orange-300 opacity-75 hover:opacity-100 text-orange-900 hover:text-gray-900 rounded-full px-10 py-2 font-semibold"><i class="mdi mdi-cart -ml-2 mr-2"></i> BUY NOW</button>
+                                    <button class="bg-primary opacity-75 hover:opacity-100 text-black hover:text-gray-900 rounded-full px-10 py-2 font-semibold"><i class="mdi mdi-cart -ml-2 mr-2"></i> BUY NOW</button>
                                 </div>
                             </div>
                         </div>
@@ -178,15 +178,15 @@ const ToolDetails = () => {
                                         type='submit' className="text-white  w-auto bg-orange-400 h-10 cursor-not-allowed hover:bg-orange-300  hover:opacity-.5 active:shadow-lg mouse shadow transition ease-in duration-200 focus:outline-none rounded-full px-10">Add</button>
                                     :
                                     <button
-                                        type='submit' className="text-white w-auto h-10 bg-primary  hover:bg-orange-400 active:shadow-lg mouse shadow transition ease-in duration-200 focus:outline-none rounded-full px-10">Add</button>
+                                        type='submit' class="bg-primary hover:opacity-100 text-black hover:text-gray-900 rounded-full px-10 py-2 font-semibold"><i class="mdi mdi-cart -ml-2 mr-2"></i>Add</button>
                             }
                         </div>
 
                     </form>
                 </div>
 
-            </section>
-        </div>
+            </section >
+        </div >
     );
 };
 

@@ -28,7 +28,7 @@ const Navbar = () => {
                 <span>
                     <button onClick={logout} className="btn btn-ghost">Log Out
                     </button>
-                    <p className='badge badge-lg badge-primary font-semibold'>{user?.displayName}</p>
+                    <p className='badge badge-lg badge-primary font-semibold'>{user.displayName}</p>
                 </span>
 
                 :

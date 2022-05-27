@@ -16,6 +16,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import MyReview from './Pages/Dashboard/MyReview';
+import Users from './Pages/Dashboard/Users';
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
           <MyReview />
         </RequireAuth>}>
         </Route>
+        <Route path='/dashboard/users' element={<Users />}></Route>
         <Route path='*' element={<NotFound />}></Route>
       </Routes>
       <Footer />

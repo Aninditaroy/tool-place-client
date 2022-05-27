@@ -1,14 +1,14 @@
 import React from 'react';
 import { toast } from 'react-toastify';
 
-const UserRow = ({ user, refetch }) => {
+const UserRow = ({ user, refetch, index }) => {
     const { email, role } = user;
     const makeAdmin = () => {
         fetch(`http://localhost:5000/user/admin/${email}`, {
             method: 'PUT',
-            // headers: {
-            //     authorization: `Bearer ${localStorage.getItem('accessToken')}`
-            // }
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('accessToken')}`
+            }
         })
             .then(res => {
                 // if (res.status === 403) {
@@ -16,20 +16,19 @@ const UserRow = ({ user, refetch }) => {
                 // }
                 return res.json()
             })
-            // .then(data => {
-            //     if (data.modifiedCount > 0) {
-            //         refetch();
-            //         toast.success(`Successfully made and admin`);
-            //     }
-            // })
-            .then(data => console.log(data))
+            .then(data => {
+                if (data.modifiedCount > 0) {
+                    refetch();
+                    toast.success(`Successfully made and admin`);
+                }
+            })
     }
     return (
         <tr>
-            <th>1</th>
+            <th>{index + 1}</th>
             <td>{email}</td>
-            <td>{role !== 'admin' && <button onClick={makeAdmin} className="btn btn-xs">Make Admin</button>}</td>
-            <td>{<button className="btn btn-xs">Remove user</button>}</td>
+            <td>{role !== 'admin' && <button onClick={makeAdmin} className="btn btn-xs bg-green-200 hover:bg-green-500">Make Admin</button>}</td>
+            <td>{<button className="btn btn-xs bg-red-200 hover:bg-red-500">Remove user</button>}</td>
         </tr >
     );
 };
