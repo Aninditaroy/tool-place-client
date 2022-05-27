@@ -9,6 +9,7 @@ const Navbar = () => {
     const [user, loading, error] = useAuthState(auth);
     const logout = () => {
         signOut(auth);
+        localStorage.removeItem('accessToken');
     };
     if (loading) {
         return <Loading />
@@ -33,7 +34,6 @@ const Navbar = () => {
                 :
                 <Link to='/login'>Login</Link>
         }</li>
-        {/* <li><Link to='/dashboard'>Dashboard</Link></li> */}
     </>
     return (
         <div className=' lg:mx-auto'>
