@@ -6,9 +6,9 @@ const InfoCard = () => {
 
         <div class="" style={{ backgroundImage: "url(https://images.unsplash.com/photo-1540103711724-ebf833bde8d1?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80)" }}>
             <div class="relative min-h-screen flex flex-col items-center justify-center " >
-                <p class="text-4xl font-bold sm:text-5xl text-white">Tools Place Shop Support</p>
+                <p class="text-4xl font-bold sm:text-5xl text-white mx-10 mt-5 lg:mx-0 ">Tools Place Shop Support</p>
                 <div class="grid mt-8  gap-8 grid-cols-1 md:grid-cols-2 xl:grid-cols-2">
-                    <div class="flex flex-col">
+                    <div class="flex flex-col mx-10 lg:mx-0 my-5">
                         <div class="bg-white shadow-md  rounded-3xl p-4">
                             <div class="flex-none lg:flex">
                                 <div class=" h-full w-full lg:h-48 lg:w-48   lg:mb-0 mb-3">
@@ -65,7 +65,7 @@ const InfoCard = () => {
                             </div>
                         </div>
                     </div>
-                    <div class="flex flex-col ">
+                    <div class="flex flex-col mx-10 lg:mx-0 my-5">
                         <div class="bg-white shadow-md  rounded-3xl p-4">
                             <div class="flex-none lg:flex">
                                 <div class=" h-full w-full lg:h-48 lg:w-48   lg:mb-0 mb-3">

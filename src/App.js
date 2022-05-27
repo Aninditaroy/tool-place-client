@@ -11,6 +11,7 @@ import RequireAuth from './Pages/Login/RequireAuth';
 import Signup from './Pages/Login/Signup';
 import Portfolio from './Pages/Portfolio/Portfolio';
 import Blog from './Pages/Blog/Blog';
+import NotFound from './Pages/NotFound/NotFound';
 
 function App() {
   return (
@@ -26,7 +27,7 @@ function App() {
         <Route path='/tools/:toolId' element={<RequireAuth>
           <ToolDetails />
         </RequireAuth>}></Route>
-
+        <Route path='*' element={<NotFound />}></Route>
       </Routes>
       <Footer />
     </div>
