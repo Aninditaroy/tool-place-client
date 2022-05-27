@@ -6,10 +6,10 @@ const Footer = () => {
         <footer class="footer footer-center p-10 bg-slate-100 rounded ">
             <img src={divider} alt="" className='' />
             <div class="grid grid-flow-col gap-4 ">
-                <Link to='/about' class="link link-hover hover:text-primary">About us</Link>
-                <Link to='' class="link link-hover hover:text-primary">Contact</Link>
-                <Link to='/myportfolio' class="link link-hover hover:text-primary">Portfolio</Link>
-                <Link to='' class="link link-hover hover:text-primary">Policy</Link>
+                <Link to='/about' class="link link-hover hover:text-primary font-semibold">About us</Link>
+                <Link to='' class="link link-hover hover:text-primary font-semibold">Contact</Link>
+                <Link to='/myportfolio' class="link link-hover hover:text-primary font-semibold">Portfolio</Link>
+                <Link to='' class="link link-hover hover:text-primary font-semibold">Policy</Link>
             </div>
             <div>
                 <div class="grid grid-flow-col gap-4">
@@ -39,7 +39,7 @@ const Footer = () => {
             </div>
 
             <div>
-                <p className=''>Copyright © 2022 - All right reserved. Made by <span className='text-primary'>Anindita</span>.</p>
+                <p className='font-semibold'>Copyright © 2022 - All right reserved. Made by <span className='text-primary'>Anindita</span>.</p>
             </div>
         </footer>
     );
