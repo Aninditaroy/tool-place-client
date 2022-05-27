@@ -39,7 +39,7 @@ const Footer = () => {
             </div>
 
             <div>
-                <p>Copyright © 2022 - All right reserved. Made by <span className='text-primary'>Anindita</span>.</p>
+                <p className=''>Copyright © 2022 - All right reserved. Made by <span className='text-primary'>Anindita</span>.</p>
             </div>
         </footer>
     );
