@@ -12,6 +12,9 @@ import Signup from './Pages/Login/Signup';
 import Portfolio from './Pages/Portfolio/Portfolio';
 import Blog from './Pages/Blog/Blog';
 import NotFound from './Pages/NotFound/NotFound';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Dashboard from './Pages/Dashboard/Dashboard';
 
 function App() {
   return (
@@ -27,9 +30,14 @@ function App() {
         <Route path='/tools/:toolId' element={<RequireAuth>
           <ToolDetails />
         </RequireAuth>}></Route>
+        <Route path="dashboard" element={<RequireAuth>
+          <Dashboard />
+        </RequireAuth>}>
+        </Route>
         <Route path='*' element={<NotFound />}></Route>
       </Routes>
       <Footer />
+      <ToastContainer />
     </div>
   );
 }

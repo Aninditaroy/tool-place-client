@@ -1,10 +1,14 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 const Tools = ({ tool }) => {
     const { _id, name, img, description, min_order_quantity, available_quantity, price
     } = tool;
-    const navigateToToolId = (`/tools/${_id}`);
+    const navigate = useNavigate();
+    const navigateToToolId = (id) => {
+        navigate(`/tools/${id}`)
+    }
     return (
         <div class="mb-10 mx-10 lg:mx-0 lg:mb-0">
             <div class="max-w-md w-full bg-slate-200 shadow-lg rounded-xl p-6">
@@ -47,13 +51,11 @@ const Tools = ({ tool }) => {
                                     <span class="hover:text-primary py-0 badge badge-md badge-accent">{available_quantity}</span>
                                 </div>
                             </div>
-                            <Link to={navigateToToolId}>
-                                <div class="flex space-x-2 text-sm font-medium justify-start">
-                                    <button class="transition ease-in duration-300 inline-flex items-center text-sm font-medium mb-2 md:mb-0 bg-primary px-5 py-3 hover:shadow-lg tracking-wider text-white rounded-full hover:bg-primary ">
-                                        <span>Add Cart</span>
-                                    </button>
-                                </div>
-                            </Link>
+                            <div class="flex space-x-2 text-sm font-medium justify-start">
+                                <button onClick={() => navigateToToolId(_id)} class="transition ease-in duration-300 inline-flex items-center text-sm font-medium mb-2 md:mb-0 bg-primary px-5 py-3 hover:shadow-lg tracking-wider text-white rounded-full hover:bg-primary ">
+                                    <span>Add Cart</span>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
