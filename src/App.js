@@ -10,6 +10,7 @@ import Login from './Pages/Login/Login';
 import RequireAuth from './Pages/Login/RequireAuth';
 import Signup from './Pages/Login/Signup';
 import Portfolio from './Pages/Portfolio/Portfolio';
+import Blog from './Pages/Blog/Blog';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path='/' element={<Home />}></Route>
         <Route path='/tools' element={<ToolsCard />}></Route>
         <Route path='/myportfolio' element={<Portfolio />}></Route>
+        <Route path='/blog' element={<Blog />}></Route>
         <Route path='/login' element={<Login />}></Route>
         <Route path='/signup' element={<Signup />}></Route>
         <Route path='/tools/:toolId' element={<RequireAuth>
