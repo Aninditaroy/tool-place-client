@@ -20,7 +20,9 @@ import Users from './Pages/Dashboard/Users';
 import MyProfile from './Pages/Dashboard/MyProfile';
 import MyOrders from './Pages/Dashboard/MyOrders';
 import AddTool from './Pages/Dashboard/AddTool';
-import MakeAdmin from './Pages/Dashboard/MakeAdmin';
+import ManageAllOrders from './Pages/Dashboard/ManageAllOrders';
+import ManageTool from './Pages/Dashboard/ManageTool';
+import Payment from './Pages/Dashboard/Payment';
 
 function App() {
   return (
@@ -41,9 +43,11 @@ function App() {
           <Route index element={<MyProfile />}></Route>
           <Route path="review" element={<MyReview />}></Route>
           <Route path='users' element={<Users />}></Route>
+          <Route path="payment/:id" element={<Payment />}></Route>
           <Route path='orders' element={<MyOrders />}></Route>
           <Route path='addtool' element={<AddTool />}></Route>
-          <Route path='makeadmin' element={<MakeAdmin />}></Route>
+          <Route path='managetool' element={<ManageTool />}></Route>
+          <Route path='manageorders' element={<ManageAllOrders />}></Route>
         </Route>
         <Route path='*' element={<NotFound />}></Route>
       </Routes>

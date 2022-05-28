@@ -1,43 +1,49 @@
 
-import { signOut } from 'firebase/auth';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import { useState } from 'react';
+import { useEffect } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { useQuery } from 'react-query';
-import { Link, useNavigate } from 'react-router-dom';
-import auth from '../../firebase.init';
-import Loading from './../Shared/Loading';
+import auth from './../../firebase.init';
+import { useNavigate, Link } from 'react-router-dom';
+import { signOut } from 'firebase/auth';
+
+
 const MyOrders = () => {
-    // const [orders, setOrders] = useState([]);
-    const [user, loading] = useAuthState(auth);
+
+    const [user] = useAuthState(auth)
     const navigate = useNavigate();
-    const { data: orders, isLoading, refetch } = useQuery('orders', () => fetch(`http://localhost:5000/orders?email=${user.email}`, {
-        method: 'GET',
-        headers: {
-            authorization: `Bearer ${localStorage.getItem('accessToken')}`
+    const [myOrders, setMyOrders] = useState([]);
+    useEffect(() => {
+        if (user) {
+            fetch(`http://localhost:5000/orders?email=${user.email}`, {
+                method: 'GET',
+                headers: {
+                    'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+                }
+            })
+                .then(res => {
+                    console.log('res', res);
+                    if (res.status === 401 || res.status === 403) {
+                        signOut(auth);
+                        localStorage.removeItem('accessToken');
+                        navigate('/');
+                    }
+                    return res.json()
+                })
+                .then(data => {
+                    setMyOrders(data);
+                });
         }
-
-    })
-        .then(res => {
-            if (res.status === 401 || res.status === 403) {
-                signOut(auth);
-                localStorage.removeItem('accessToken')
-                navigate('/')
-            }
-            return res.json()
-        })
-    )
-
-    if (isLoading || loading) {
-        return <Loading />
-    }
-
+    }, [user])
 
     return (
         <div>
-            <h2 className='text-2xl my-5 text-center font-semibold'>My Orders:</h2>
-            {/* <span className='text-primary'>{orders.length}</span> */}
-            <div className="overflow-x-auto">
-                <table className="table w-full table-compact ">
+            <div className="flex justify-start item-start space-y-2 flex-col">
+                <h1 className="text-3xl dark:text-white lg:text-4xl font-semibold leading-7 lg:leading-9 text-gray-800">Order :{myOrders.length}</h1>
+            </div>
+
+            <div className="overflow-x-auto container table-compact mx-auto">
+                <table className="table w-full mt-10 mb-64 mx-auto">
                     <thead>
                         <tr>
                             <th></th>
@@ -47,34 +53,33 @@ const MyOrders = () => {
                             <th>Tool</th>
                             <th>Address</th>
                             <th>Price</th>
-                            <th>Quantity</th>
                             <th>Payment</th>
                         </tr>
                     </thead>
                     <tbody>
                         {
-                            orders.map((order, index) => <tr key={order._id} order={order}>
+                            myOrders.map((order, index) => <tr key={order._id}>
                                 <th>{index + 1}</th>
                                 <td>{order.userName}</td>
                                 <td>{order.email}</td>
+                                <td>{order.userName}</td>
                                 <td>{order.toolName}</td>
                                 <td>{order.address}</td>
                                 <td>{order.price}</td>
-                                <td>{order.minQuantity}</td>
                                 <td>
-                                    {(order.price && !order.paid) && <Link to={`/ dashboard / payment / ${order._id}`}><button className='btn btn-xs btn-success'>pay</button></Link>}
-                                    {(order.price && order.paid) && <div>
+                                    {(order.price && !order.paid) && <Link to={`/dashboard/payment/${order._id}`}><button className='btn btn-xs btn-success'>pay</button></Link>}
+                                    {(order.price && order.paid) && <>
                                         <p><span className='text-success'>Paid</span></p>
                                         <p>Transaction id: <span className='text-success'>{order.transactionId}</span></p>
-                                    </div>}
+                                    </>}
                                 </td>
                             </tr>)
                         }
                     </tbody>
                 </table>
             </div>
-        </div>
 
+        </div >
     );
 };
 

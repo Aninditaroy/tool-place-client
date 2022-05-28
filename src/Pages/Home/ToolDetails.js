@@ -17,7 +17,7 @@ const ToolDetails = () => {
     const available = tool.available_quantity;
     console.log(tool);
 
-    const onSubmit = (data, e) => {
+    const onSubmit = (data) => {
         // console.log(data)
         if (minOrder <= data.min_order_quantity) {
             minOrder = data.min_order_quantity
@@ -41,8 +41,8 @@ const ToolDetails = () => {
         fetch('http://localhost:5000/orders', {
             method: "POST",
             headers: {
-                'content-type': 'application/json'
-                // authorization: `Bearer ${localStorage.getItem('accessToken')}`
+                'content-type': 'application/json',
+                authorization: `Bearer ${localStorage.getItem('accessToken')}`
             },
             body: JSON.stringify(order)
         })

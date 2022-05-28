@@ -6,7 +6,7 @@ import Loading from '../Shared/Loading';
 
 const AddTool = () => {
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
-    const { data: tools, isLoading } = useQuery('tools', () => fetch('http://localhost:5000/tools').then(res => res.json()))
+    const { data: tools, isLoading } = useQuery('tools', () => fetch('http://localhost:5000/tool').then(res => res.json()))
 
     const imageStorageKey = '897f17e2399bad4621116b5130fd571a';
     const onSubmit = async (data) => {
@@ -71,7 +71,7 @@ const AddTool = () => {
                         type="text"
                         placeholder="Tool"
                         className="input input-bordered w-full max-w-xs"
-                        {...register('tool', {
+                        {...register('name', {
                             required: {
                                 value: true,
                                 message: 'Tool is required'

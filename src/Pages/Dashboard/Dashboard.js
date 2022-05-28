@@ -16,17 +16,25 @@ const Dashboard = () => {
             </div>
             <div className="drawer-side">
                 <label htmlFor="dashboard-sidebar" className="drawer-overlay"></label>
-                <ul className="menu p-4 overflow-y-auto w-60 bg-base-100 text-base-content">
-                    <li><Link to='/dashboard'>My Profile</Link></li>
-                    <li><Link to='/dashboard/review'>Add a Review</Link></li>
-                    <li><Link to='/dashboard/orders'>My Orders</Link></li>
+                <ul className="menu p-4 overflow-y-auto w-60 bg-gray-100 shadow-xl rounded m-0 lg:m-5">
+                    {
+                        !admin &&
+                        <>
+                            <h2 className='text-2xl font-bold text-primary text-center my-10 '><span className='border-b-2 border-orange-200'>User</span></h2>
+                            <li><Link to='/dashboard'>My Profile</Link></li>
+                            <li><Link to='/dashboard/review'>Add a Review</Link></li>
+                            <li><Link to='/dashboard/orders'>My Orders</Link></li>
+                        </>
+                    }
                     {
                         admin &&
                         <>
-                            <li><Link to='/dashboard/users'>All Users</Link></li>
-                            <li><Link to='/dashboard/manageorders'>Manage All Orders</Link></li>
-                            <li><Link to='/dashboard/makeadmin'>Make Admin</Link></li>
-                            <li><Link to='/dashboard/addtool'>Add a tool</Link></li>
+                            <h2 className='text-2xl font-bold text-primary text-center my-10 '><span className='border-b-2 border-orange-200'>Admin</span></h2>
+                            <li><Link to='/dashboard' >My Profile</Link></li>
+                            <li><Link to='/dashboard/users' >All Users</Link></li>
+                            <li><Link to='/dashboard/manageorders' >Manage All Orders</Link></li>
+                            <li><Link to='/dashboard/managetool' >Manage Tool</Link></li>
+                            <li><Link to='/dashboard/addtool' >Add a tool</Link></li>
                         </>
                     }
                 </ul>

@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 const useToolDetails = (toolId) => {
     const [tool, setTool] = useState({});
     useEffect(() => {
-        fetch(`http://localhost:5000/tools/${toolId}`)
+        fetch(`http://localhost:5000/tool/${toolId}`)
             .then(res => res.json())
             .then(data => {
                 setTool(data)

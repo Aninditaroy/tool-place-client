@@ -10,7 +10,7 @@ const Tools = ({ tool }) => {
         navigate(`/tools/${id}`)
     }
     return (
-        <div className="mb-10 mx-10 lg:mx-0 lg:mb-0">
+        <div className="mb-10 mx-10 lg:mx-0 lg:mb-0 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
             <div className="max-w-md w-full bg-slate-200 shadow-lg rounded-xl p-6">
                 <div className="flex flex-col">
                     <div className="">

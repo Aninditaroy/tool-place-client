@@ -11,7 +11,7 @@ const HomeTools = () => {
                     Tools
                 </h2>
                 <img src={divider} alt="" className='mb-10 w-40' />
-                <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-16 mb-20 md:gap-3 sm:gap-y-3'>
+                <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-16 mb-20 md:gap-3 sm:gap-y-3 '>
                     {
                         tools.slice(0, 6).map(tool => <Tools
                             key={tool._id}
