@@ -3,16 +3,16 @@ import { Link } from 'react-router-dom';
 import divider from '../../Assets/separator.png';
 const Footer = () => {
     return (
-        <footer class="footer footer-center p-10 bg-slate-100 rounded ">
+        <footer className="footer footer-center p-10 bg-slate-100 rounded ">
             <img src={divider} alt="" className='' />
-            <div class="grid grid-flow-col gap-4 ">
-                <Link to='/about' class="link link-hover hover:text-primary font-semibold">About us</Link>
-                <Link to='' class="link link-hover hover:text-primary font-semibold">Contact</Link>
-                <Link to='/myportfolio' class="link link-hover hover:text-primary font-semibold">Portfolio</Link>
-                <Link to='' class="link link-hover hover:text-primary font-semibold">Policy</Link>
+            <div className="grid grid-flow-col gap-4 ">
+                <Link to='/about' className="link link-hover hover:text-primary font-semibold">About us</Link>
+                <Link to='' className="link link-hover hover:text-primary font-semibold">Contact</Link>
+                <Link to='/myportfolio' className="link link-hover hover:text-primary font-semibold">Portfolio</Link>
+                <Link to='' className="link link-hover hover:text-primary font-semibold">Policy</Link>
             </div>
             <div>
-                <div class="grid grid-flow-col gap-4">
+                <div className="grid grid-flow-col gap-4">
                     <span className="text-gray-500 hover:text-primary">
                         <svg fill="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-5 h-5" viewBox="0 0 24 24">
                             <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>

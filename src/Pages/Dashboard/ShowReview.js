@@ -14,7 +14,7 @@ const ShowReview = () => {
 
     return (
         <div className='w-4/5 mx-auto  my-20'>
-            <h2 class="text-4xl font-bold lg:text-5xl text-center text-accent">
+            <h2 className="text-4xl font-bold lg:text-5xl text-center text-accent">
                 Reviews
             </h2>
             <img src={divider} alt="" className='mb-3 w-28 mx-auto mt-1' />

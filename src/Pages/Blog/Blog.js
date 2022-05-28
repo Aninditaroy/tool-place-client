@@ -3,18 +3,18 @@ import divider from '../../Assets/separator.png';
 const Blog = () => {
     return (
         <div>
-            <section class="text-gray-700 mb-16">
-                <div class="container px-5 py-16 mx-auto">
-                    <div class="text-center mb-20">
-                        <h1 class="sm:text-3xl text-2xl font-medium text-center title-font text-gray-900 mb-4">
+            <section className="text-gray-700 mb-16">
+                <div className="container px-5 py-16 mx-auto">
+                    <div className="text-center mb-20">
+                        <h1 className="sm:text-3xl text-2xl font-medium text-center title-font text-gray-900 mb-4">
                             Blog Questions Answer
                         </h1>
                         <img src={divider} alt="" className='mb-10 w-40 mx-auto' />
                     </div>
-                    <div class="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2">
-                        <div class="w-full lg:w-1/2 px-4 py-2">
-                            <details class="mb-4">
-                                <summary class="font-semibold  bg-gray-200 rounded-md py-2 px-4">
+                    <div className="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2">
+                        <div className="w-full lg:w-1/2 px-4 py-2">
+                            <details className="mb-4">
+                                <summary className="font-semibold  bg-gray-200 rounded-md py-2 px-4">
                                     How will you improve the performance of a React Application?
                                 </summary>
 
@@ -27,8 +27,8 @@ const Blog = () => {
                                     <li>Lazy loading images in React</li>
                                 </span>
                             </details>
-                            <details class="mb-4">
-                                <summary class="font-semibold bg-gray-200 rounded-md py-2 px-4">
+                            <details className="mb-4">
+                                <summary className="font-semibold bg-gray-200 rounded-md py-2 px-4">
                                     What are the different ways to manage a state in a React application?
                                 </summary>
 
@@ -41,8 +41,8 @@ const Blog = () => {
                                     We may need to pass props through many component levels. This is known as "prop drilling".
                                 </span>
                             </details>
-                            <details class="mb-4">
-                                <summary class="font-semibold bg-gray-200 rounded-md py-2 px-4">
+                            <details className="mb-4">
+                                <summary className="font-semibold bg-gray-200 rounded-md py-2 px-4">
                                     How does prototypical inheritance work?
                                 </summary>
 
@@ -52,9 +52,9 @@ const Blog = () => {
                                 </span>
                             </details>
                         </div>
-                        <div class="w-full lg:w-1/2 px-4 py-2">
-                            <details class="mb-4">
-                                <summary class="font-semibold  bg-gray-200 rounded-md py-2 px-4">
+                        <div className="w-full lg:w-1/2 px-4 py-2">
+                            <details className="mb-4">
+                                <summary className="font-semibold  bg-gray-200 rounded-md py-2 px-4">
                                     Why you do not set the state directly in React?
                                 </summary>
 
@@ -62,8 +62,8 @@ const Blog = () => {
                                     When we directly update the state, it does not change this.state immediately. Instead, it creates a pending state transition, and accessing it after calling this method will only return the present value.And it will lose control of the state across all components.The ui of a component renders based on the state.If i set value directly to products and call the setProducts,it cant rerender the ui,if we set value in setProducts it can rerender ui and result changed can show on ui.
                                 </span>
                             </details>
-                            <details class="mb-4">
-                                <summary class="font-semibold  bg-gray-200 rounded-md py-2 px-4">
+                            <details className="mb-4">
+                                <summary className="font-semibold  bg-gray-200 rounded-md py-2 px-4">
                                     What is a unit test? Why should write unit tests?
                                 </summary>
 

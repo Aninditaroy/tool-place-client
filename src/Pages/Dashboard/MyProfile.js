@@ -9,19 +9,19 @@ const MyProfile = () => {
     const navigate = useNavigate();
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:5000/order?=${user.email}`, {
+            fetch(`http://localhost:5000/orders?=${user.email}`, {
                 method: 'GET',
                 headers: {
-                    'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+                    authorization: `Bearer ${localStorage.getItem('accessToken')}`
                 }
             })
                 .then(res => {
                     console.log('res', res);
-                    if (res.status === 401 || res.status === 403) {
-                        signOut(auth);
-                        localStorage.removeItem('accessToken');
-                        navigate('/');
-                    }
+                    // if (res.status === 401 || res.status === 403) {
+                    //     signOut(auth);
+                    //     localStorage.removeItem('accessToken');
+
+                    // } navigate('/');
                     return res.json()
                 })
                 .then(data => {
@@ -34,39 +34,8 @@ const MyProfile = () => {
 
     return (
         <div>
-            <h2>My appointments: {orders.length}</h2>
-            <div className="overflow-x-auto">
-                <table className="table w-full">
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th>Name</th>
-                            <th>Date</th>
-                            <th>Time</th>
-                            <th>Treatment</th>
-                            <th>Payment</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {
-                            orders.map((o, index) => <tr key={o._id}>
-                                <th>{index + 1}</th>
-                                <td>{o.patientName}</td>
-                                <td>{o.date}</td>
-                                <td>{o.slot}</td>
-                                <td>{o.treatment}</td>
-                                <td>
-                                    {(o.price && !o.paid) && <Link to={`/dashboard/payment/${o._id}`}><button className='btn btn-xs btn-success'>pay</button></Link>}
-                                    {(o.price && o.paid) && <div>
-                                        <p><span className='text-success'>Paid</span></p>
-                                        <p>Transaction id: <span className='text-success'>{o.transactionId}</span></p>
-                                    </div>}
-                                </td>
-                            </tr>)
-                        }
-                    </tbody>
-                </table>
-            </div>
+            <h2 className='text-2xl my-5 text-center font-semibold'>My Profile</h2>
+
         </div>
 
     );

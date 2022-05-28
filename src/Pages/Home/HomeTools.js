@@ -6,8 +6,8 @@ const HomeTools = () => {
     const [tools] = useTools();
     return (
         <div>
-            <div class="relative min-h-screen flex flex-col items-center justify-center ">
-                <h2 class="text-4xl font-bold sm:text-6xl mt-10">
+            <div className="relative min-h-screen flex flex-col items-center justify-center ">
+                <h2 className="text-4xl font-bold sm:text-6xl mt-10">
                     Tools
                 </h2>
                 <img src={divider} alt="" className='mb-10 w-40' />
