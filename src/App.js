@@ -20,6 +20,7 @@ import Users from './Pages/Dashboard/Users';
 import MyProfile from './Pages/Dashboard/MyProfile';
 import MyOrders from './Pages/Dashboard/MyOrders';
 import AddTool from './Pages/Dashboard/AddTool';
+import MakeAdmin from './Pages/Dashboard/MakeAdmin';
 
 function App() {
   return (
@@ -36,13 +37,13 @@ function App() {
           <ToolDetails />
         </RequireAuth>}></Route>
         <Route path="dashboard" element={<RequireAuth>
-          <Dashboard />
-        </RequireAuth>}>
+          <Dashboard /></RequireAuth>}>
           <Route index element={<MyProfile />}></Route>
           <Route path="review" element={<MyReview />}></Route>
           <Route path='users' element={<Users />}></Route>
           <Route path='orders' element={<MyOrders />}></Route>
           <Route path='addtool' element={<AddTool />}></Route>
+          <Route path='makeadmin' element={<MakeAdmin />}></Route>
         </Route>
         <Route path='*' element={<NotFound />}></Route>
       </Routes>
