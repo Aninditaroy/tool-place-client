@@ -1,54 +1,37 @@
 import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { useQuery } from 'react-query';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from './../../firebase.init';
 import { toast } from 'react-toastify';
-import Loading from '../Shared/Loading';
 
 const MyProfile = () => {
     const [user] = useAuthState(auth)
-    console.log(user.email, 'email found');
-
-    // const { register, handleSubmit, watch, formState: { errors }, reset } = useForm();
-
-    // const { data: users, isLoading, refetch } = useQuery('users', () => fetch(`http://localhost:5000/user/${user?.email}`)
-    //     .then(res => res.json())
-    // )
-
-    // console.log(user.displayName)
-
-    // // if (isLoading) {
-    // //     return <Loading />
-    // // }
-    const { register, handleSubmit, watch, formState: { errors }, reset } = useForm();
-
-    // const { data: users, isLoading, refetch } = useQuery('users', () => fetch(`http://localhost:5000/user/${user?.email}`)
-    //     .then(res => res.json())
-    // )
+    const { register, handleSubmit, formState: { errors }, reset } = useForm();
     const [users, setUsers] = useState({});
     useEffect(() => {
-        fetch(`http://localhost:5000/user/${user?.email}`)
+        fetch(`https://secret-peak-21813.herokuapp.com/user/${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setUsers(data)
 
             });
     }, [users]);
-    console.log(users)
+    let userEmail;
+    userEmail = user.email;
     const onSubmit = (data, e) => {
+        if (data.email) {
+            userEmail = data.email;
+        }
         const updatedUser = {
-            // userId: users._id,
-            email: user.email,
+            email: userEmail,
             city: data.city,
             district: data.district,
             education: data.education,
             linkedin: data.linkedinProfileLink,
             phone: data.phoneNumber
         }
-        console.log("USER", data)
 
-        const url = `http://localhost:5000/user/${user.email}`
+        const url = `https://secret-peak-21813.herokuapp.com/user/${user.email}`
         fetch(url, {
             method: "PATCH",
             headers: {
@@ -59,7 +42,6 @@ const MyProfile = () => {
             .then(res => res.json())
             .then(data => {
                 if (data) {
-                    // console.log(users._id)
                     toast.success("Updated your information")
                     reset();
                 }

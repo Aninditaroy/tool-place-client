@@ -6,8 +6,9 @@ import ManageAllOrdersRow from './ManageAllOrdersRow';
 
 
 const ManageAllOrders = () => {
-    const { data: orders, isLoading, refetch } = useQuery('orders', () => fetch('http://localhost:5000/orders', {
+    const { data: orders, isLoading, refetch } = useQuery('orders', () => fetch('https://secret-peak-21813.herokuapp.com/manageorders', {
         headers: {
+            'content-type': 'application/json',
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
         }
     }).then(res => res.json()));
@@ -19,7 +20,7 @@ const ManageAllOrders = () => {
         <>
             <div className='text-center'>
 
-                <h2 className='text-3xl text-center'><span className='border-b-2 border-orange-200 font-semibold'>Mnagae Tools</span></h2>
+                <h2 className='text-3xl text-center'><span className='border-b-2 border-orange-200 font-semibold'>Manage Orders</span></h2>
             </div>
             <div className="overflow-x-auto container mx-auto">
                 <table className="table  w-2/3 mt-10 mb-64 mx-auto">
@@ -36,14 +37,20 @@ const ManageAllOrders = () => {
                     </thead>
                     <tbody>
                         {
-                            orders.map((order, index) => <ManageAllOrdersRow index={index} key={order._id} order={order} refetch={refetch} setDeletingOrder={setDeletingOrder}></ManageAllOrdersRow>)
+                            orders.map((order, index) => <ManageAllOrdersRow
+                                index={index}
+                                key={order._id}
+                                order={order}
+                                refetch={refetch}
+                                setDeletingOrder={setDeletingOrder}
+                            />)
                         }
                     </tbody>
                 </table>
             </div>
             {
                 deletingOrder && <DeleteOrderModal
-                    deletingTool={deletingOrder}
+                    deletingOrder={deletingOrder}
                     refetch={refetch}
                     setDeletingOrder={setDeletingOrder}
                 />

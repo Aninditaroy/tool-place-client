@@ -22,7 +22,7 @@ const MyReview = () => {
         }
 
         //send to  database
-        fetch('http://localhost:5000/review', {
+        fetch('https://secret-peak-21813.herokuapp.com/review', {
             method: "POST",
             headers: {
                 'content-type': 'application/json',

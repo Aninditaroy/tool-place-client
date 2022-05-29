@@ -6,7 +6,7 @@ import Loading from '../Shared/Loading';
 
 const AddTool = () => {
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
-    const { data: tools, isLoading } = useQuery('tools', () => fetch('http://localhost:5000/tool').then(res => res.json()))
+    const { data: tools, isLoading } = useQuery('tools', () => fetch('https://secret-peak-21813.herokuapp.com/tool').then(res => res.json()))
 
     const imageStorageKey = '897f17e2399bad4621116b5130fd571a';
     const onSubmit = async (data) => {
@@ -31,7 +31,7 @@ const AddTool = () => {
                         img: img,
                     }
                     //send to database
-                    fetch('http://localhost:5000/tool', {
+                    fetch('https://secret-peak-21813.herokuapp.com/tool', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',

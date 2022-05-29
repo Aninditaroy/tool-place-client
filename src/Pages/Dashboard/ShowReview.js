@@ -5,7 +5,7 @@ import divider from '../../Assets/separator.png';
 import ReviewDetails from './ReviewDetails';
 
 const ShowReview = () => {
-    const { data: reviews, isLoading, refetch } = useQuery('reviews', () => fetch('http://localhost:5000/review')
+    const { data: reviews, isLoading, refetch } = useQuery('reviews', () => fetch('https://secret-peak-21813.herokuapp.com/review')
         .then(res => res.json())
     )
     if (isLoading) {

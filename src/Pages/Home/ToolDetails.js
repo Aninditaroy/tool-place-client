@@ -38,7 +38,7 @@ const ToolDetails = () => {
         console.log(data.min_order_quantity)
 
         //send to  database
-        fetch('http://localhost:5000/orders', {
+        fetch('https://secret-peak-21813.herokuapp.com/orders', {
             method: "POST",
             headers: {
                 'content-type': 'application/json',

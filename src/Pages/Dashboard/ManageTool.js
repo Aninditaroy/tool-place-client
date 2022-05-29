@@ -6,7 +6,7 @@ import { useQuery } from 'react-query';
 import Loading from '../Shared/Loading';
 
 const ManageTool = () => {
-    const { data: tools, isLoading, refetch } = useQuery('tools', () => fetch('http://localhost:5000/tool', {
+    const { data: tools, isLoading, refetch } = useQuery('tools', () => fetch('https://secret-peak-21813.herokuapp.com/tool', {
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
         }

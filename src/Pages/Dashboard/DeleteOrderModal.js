@@ -1,17 +1,17 @@
 import React from 'react';
 import { toast } from 'react-toastify';
 const DeleteOrderModal = ({ deletingOrder, refetch, setDeletingOrder }) => {
-    const { name, _id } = deletingOrder;
+    const { _id } = deletingOrder;
     const handleDelete = (id) => {
         console.log(id)
-        fetch(`http://localhost:5000/orders/${id}`, {
+        fetch(`https://secret-peak-21813.herokuapp.com/orders/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())
             .then(data => {
                 console.log(data)
                 if (data.deletedCount) {
-                    toast.success(`Order: ${name} is deleted`);
+                    toast.success(`Order deleted`);
                     setDeletingOrder(null);
                     refetch();
                 }
@@ -26,7 +26,7 @@ const DeleteOrderModal = ({ deletingOrder, refetch, setDeletingOrder }) => {
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 mx-auto text-red-600 my-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
                     </svg>
-                    <h3 className="font-bold text-sm text-center">Are you sure you want to delete {name}?</h3>
+                    <h3 className="font-bold text-sm text-center">Are you sure you want to delete?</h3>
                     <div className="modal-action flex justify-center">
                         <button onClick={() => handleDelete(_id)} className="btn btn-xs  max-w-xs text-white  bg-red-600 h-10  hover:bg-red-300  hover:opacity-.5 active:shadow-lg shadow transition ease-in duration-200 focus:outline-none rounded-full px-10">Delete</button>
                         <label for="delete-order-modal" className="btn btn-xs  max-w-xs text-white  bg-black h-10  hover:opacity-.5 active:shadow-lg shadow transition ease-in duration-200 focus:outline-none rounded-full px-10">Cancel</label>

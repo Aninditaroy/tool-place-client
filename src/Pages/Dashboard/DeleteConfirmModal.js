@@ -5,7 +5,7 @@ const DeleteConfirmModal = ({ deletingTool, refetch, setDeletingTool }) => {
     const { name, _id } = deletingTool;
     const handleDelete = (id) => {
         console.log(id)
-        fetch(`http://localhost:5000/tool/${id}`, {
+        fetch(`https://secret-peak-21813.herokuapp.com/tool/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

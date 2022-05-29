@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const MyOrdersRow = ({ order, index, setDeletingOrder, refetch }) => {
+const MyOrdersRow = ({ order, index, setDeletingOrder }) => {
     const { _id, email, userName, toolName, address, price, paid, transactionId } = order;
     return (
         <tr>
@@ -11,6 +11,26 @@ const MyOrdersRow = ({ order, index, setDeletingOrder, refetch }) => {
             <td>{toolName}</td>
             <td>{address}</td>
             <td>{price}</td>
+            <td>
+                {
+                    (order.paid && order.pendingChange !== 'shipped') &&
+                    <div className='flex flex-col items-center'>
+                        <p>
+                            <span className='text-gray-400'>Pending</span>
+                        </p>
+                        <br />
+                    </div>
+                }
+                {
+                    (order.paid && order.pendingChange === 'shipped') &&
+                    <div className='flex flex-col items-center'>
+                        <p>
+                            <span className='text-gray-400'>Confirmed</span>
+                        </p>
+                        <br />
+                    </div>
+                }
+            </td>
             <td>
                 {(price && !paid) && <Link to={`/dashboard/payment/${_id}`}><button className='btn btn-xs btn-success'>pay</button></Link>}
                 {(price && paid) && <>
