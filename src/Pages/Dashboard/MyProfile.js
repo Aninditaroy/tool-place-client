@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useQuery } from 'react-query';
 import { useAuthState } from 'react-firebase-hooks/auth';
@@ -8,43 +8,58 @@ import Loading from '../Shared/Loading';
 
 const MyProfile = () => {
     const [user] = useAuthState(auth)
+    console.log(user.email, 'email found');
+
+    // const { register, handleSubmit, watch, formState: { errors }, reset } = useForm();
+
+    // const { data: users, isLoading, refetch } = useQuery('users', () => fetch(`http://localhost:5000/user/${user?.email}`)
+    //     .then(res => res.json())
+    // )
+
+    // console.log(user.displayName)
+
+    // // if (isLoading) {
+    // //     return <Loading />
+    // // }
     const { register, handleSubmit, watch, formState: { errors }, reset } = useForm();
 
-    const { data: users, isLoading, refetch } = useQuery('users', () => fetch(`http://localhost:5000/user/${users?.email}`)
-        .then(res => res.json())
-    )
+    // const { data: users, isLoading, refetch } = useQuery('users', () => fetch(`http://localhost:5000/user/${user?.email}`)
+    //     .then(res => res.json())
+    // )
+    const [users, setUsers] = useState({});
+    useEffect(() => {
+        fetch(`http://localhost:5000/user/${user?.email}`)
+            .then(res => res.json())
+            .then(data => {
+                setUsers(data)
 
-    console.log(user.displayName)
-
-    // if (isLoading) {
-    //     return <Loading />
-    // }
+            });
+    }, [users]);
+    console.log(users)
     const onSubmit = (data, e) => {
-        const user = {
-            userId: users._id,
+        const updatedUser = {
+            // userId: users._id,
+            email: user.email,
             city: data.city,
             district: data.district,
             education: data.education,
-            linkedin: data.linkedin,
-
-            phone: data.phone
-
+            linkedin: data.linkedinProfileLink,
+            phone: data.phoneNumber
         }
-        console.log("USER", user)
+        console.log("USER", data)
 
-        const url = `http://localhost:5000/user/${users._id}`
+        const url = `http://localhost:5000/user/${user.email}`
         fetch(url, {
             method: "PATCH",
             headers: {
                 'content-type': 'application/json'
             },
-
-
-            body: JSON.stringify(user),
+            body: JSON.stringify(updatedUser),
         })
             .then(res => res.json())
             .then(data => {
                 if (data) {
+                    // console.log(users._id)
                     toast.success("Updated your information")
                     reset();
                 }
@@ -57,17 +72,16 @@ const MyProfile = () => {
 
     return (
         <div>
-            <form onSubmit={handleSubmit(onSubmit)} className="my-3">
-                <h2 className='text-2xl text-center'><span className='border-b-2 border-orange-200 font-semibold'>Edit Profile</span></h2>
+            <form onSubmit={handleSubmit(onSubmit)} className="my-5">
                 <div className="editor mx-auto w-10/12 flex flex-col text-gray-800 bg-white p-4 shadow-2xl max-w-2xl justify-center my-16 rounded">
-
+                    <h2 className='text-2xl text-center'><span className='border-b-2 border-orange-200 font-semibold'>Edit Profile</span></h2>
                     {/* name feild */}
                     <div className='form-control w-full '>
                         <label for="name" className="leading-7 text-sm text-gray-600">Name</label>
                         <input className="title bg-gray-100 border  p-2  outline-none" spellCheck="false" placeholder="Tool Name" type="text" defaultValue={user.displayName} {...register("name", {
                             required: {
                                 value: true,
-                                message: "Please provide tool name ! its required"
+                                message: "Please provide your name! its required"
                             },
                         })} />
                         <label className="label">
@@ -80,7 +94,7 @@ const MyProfile = () => {
 
                     <div className="form-control w-full ">
                         <label for="email" className="leading-7 text-sm text-gray-600">Email</label>
-                        <input className="title bg-gray-100 p-2 w-full  rounded border border-gray-300 focus:border-orange-300 focus:ring-2 focus:ring-orange-300 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" spellCheck="false" value={user.email} type="text" {...register("email")} />
+                        <input className="title bg-gray-100 p-2 w-full  rounded border border-gray-300 focus:border-orange-300 focus:ring-2 focus:ring-orange-300 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" spellCheck="false" defaultValue={user.email} type="text" {...register("email")} />
                     </div>
 
                     {/* education */}

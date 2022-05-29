@@ -9,7 +9,7 @@ const ReviewDetails = ({ review }) => {
     return (
 
         <>
-            <div className="relative lg:w-max-lg h-auto bg-slate-300 hover:bg-gradient-to-r hover:from-orange-400 hover:to-rose-400 hover:shadow-2xl rounded pt-3 pb-8 px-4 shadow-xl transition flex flex-col items-center">
+            <div className="relative lg:w-max-lg h-auto bg-orange-200/70 hover:bg-gradient-to-r hover:from-orange-400 hover:to-rose-400 hover:shadow-2xl rounded pt-3 pb-8 px-4 shadow-xl transition flex flex-col items-center">
                 <label className="font-bold text-black text-lg">
                     <Rating
                         initialRating={rate}
