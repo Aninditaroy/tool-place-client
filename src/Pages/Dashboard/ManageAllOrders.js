@@ -17,14 +17,13 @@ const ManageAllOrders = () => {
         return <Loading />
     }
     return (
-        <div className='max-w-lg'>
+        <>
             <div className='text-center'>
-
                 <h2 className='text-3xl text-center'><span className='border-b-2 border-orange-200 font-semibold'>Manage Orders</span></h2>
             </div>
-            <div className="overflow-x-auto container mx-auto">
-                <table className="table  w-2/3 mt-10 mb-64 mx-auto  border-collapse block md:table  my-12 manage-inventory-container  shadow-2xl rounded-lg lg:w-4/5 md:w-4/5 sm:w-full ">
-                    <thead className='block md:table-header-groups m:hidden visible'>
+            <div className="overflow-x-auto">
+                <table className="table w-full mt-10 mb-64 mx-auto">
+                    <thead>
                         <tr className=''>
                             <th></th>
                             <th>Tool Image</th>
@@ -54,7 +53,7 @@ const ManageAllOrders = () => {
                     setDeletingOrder={setDeletingOrder}
                 />
             }
-        </div>
+        </>
     )
 };
 

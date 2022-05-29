@@ -17,7 +17,6 @@ const ManageTool = () => {
     }
     return (
         <>
-            {/* name, img, description, min_order_quantity, available_quantity, price */}
             <h2 className='text-2xl text-center'><span className='border-b-2 border-orange-200 font-semibold'>Manage Tools</span></h2>
             <div className="overflow-x-auto">
                 <table className="table w-full mt-10 mb-64 mx-auto table-compact">
