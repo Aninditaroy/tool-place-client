@@ -2,7 +2,7 @@ import React from 'react';
 import { toast } from 'react-toastify';
 
 const ManageAllOrdersRow = ({ order, index, refetch, setDeletingOrder }) => {
-    const { _id, img, email, toolName, minQuantity } = order;
+    const { _id, img, email, toolName } = order;
 
     const handlePending = () => {
         console.log('manage order haha')
@@ -27,7 +27,7 @@ const ManageAllOrdersRow = ({ order, index, refetch, setDeletingOrder }) => {
 
 
     return (
-        <tr className=" border border-grey-500 md:border-none block md:table-row">
+        <tr className="border border-grey-500 md:border-none block md:table-row">
             <th>{index + 1}</th>
             <td className="p-2  text-left block md:table-cell border-x-2"><span className="inline-block w-1/3 md:hidden font-bold ">Name</span>
                 <div className="avatar">
@@ -37,10 +37,9 @@ const ManageAllOrdersRow = ({ order, index, refetch, setDeletingOrder }) => {
                 </div>
             </td>
 
-            <td className="p-2  text-left block md:table-cell border-x-2"><span className="inline-block w-1/3 md:hidden font-bold">Tool Name</span>{toolName}</td>
+            <td className="p-2  text-left block md:table-cell border-x-2"><span className="inline-block w-1/3 md:hidden font-bold break-all break-words">Tool Name</span>{toolName}</td>
 
             <td className="p-2  text-left block md:table-cell border-x-2"><span className="inline-block w-1/3 md:hidden font-bold">Ordered By</span>{email}</td>
-            <td className="p-2  text-left block md:table-cell"><span className="inline-block w-1/3 md:hidden font-bold">Ordered Quantity</span>{minQuantity}</td>
 
 
             <td className="p-2  text-left block md:table-cell border-x-2">
