@@ -2,11 +2,6 @@
 
 Live Link [Tool Place](https://tools-place-957b6.web.app/)
 
-## Admin Role Credentials
-
-* Email: noah@gmail.com
-* Password: 123456
-
 ## Features
 
 * In Tool place, you can find all the tools in one place.
@@ -26,6 +21,11 @@ Live Link [Tool Place](https://tools-place-957b6.web.app/)
 * In blog page,you can know about some Q/A.
 
 * If an admin logged, an admin sees Manage tools (where admin can delete tools) Manage Orders (admin can delete order which is not paid yet,can update pending status as shipped) All users( where admin can make an user as admin) and add tools(admin can add tool) .
+
+## Admin Role Credentials
+
+* Email: noah@gmail.com
+* Password: 123456
 
 ## Used Frameworks and Libraries
 
