@@ -2,6 +2,11 @@
 
 Live Link [Tool Place](https://tools-place-957b6.web.app/)
 
+## Admin Role Credentials
+
+* Email: noah@gmail.com
+* Password: 123456
+
 ## Features
 
 * In Tool place, you can find all the tools in one place.
