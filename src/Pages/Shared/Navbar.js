@@ -17,8 +17,8 @@ const Navbar = () => {
     const menuItems = <>
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/tools'>Tools</Link></li>
-        <li><Link to='/myportfolio'>My Portfolio</Link></li>
-        <li><Link to='/blog'>Blog</Link></li>
+        {/* <li><Link to='/myportfolio'>My Portfolio</Link></li>
+        <li><Link to='/blog'>Blog</Link></li> */}
         {
             user && <li><Link to='/dashboard'>Dashboard</Link></li>
         }
@@ -48,7 +48,7 @@ const Navbar = () => {
                     </div>
                     <Link className="lg:ml-24" to='/'><img src={logo} alt="" className='w-80' /></Link>
                 </div>
-                <div className="navbar-center hidden lg:flex">
+                <div className="navbar-end hidden lg:flex">
                     <ul className="menu menu-horizontal p-0">
                         {menuItems}
                     </ul>

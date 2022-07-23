@@ -10,11 +10,11 @@ const Tools = ({ tool }) => {
         navigate(`/tools/${id}`)
     }
     return (
-        <div className="mb-10 mx-10 lg:mx-0 lg:mb-0 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
-            <div className="max-w-md w-full bg-slate-200 shadow-lg rounded-xl p-6">
+        <div className="mb-10 mx-10 lg:mx-3 lg:mb-0 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+            <div className="max-w-sm w-full bg-slate-200 shadow-lg rounded-xl p-6">
                 <div className="flex flex-col">
                     <div className="">
-                        <div className="relative h-62 w-full mb-3">
+                        <div className="relative h-62 mb-3">
                             <div className="absolute flex flex-col top-0 right-0 p-3">
                                 <button className="transition ease-in duration-300 bg-gray-100 hover:bg-gray-800 border hover:border-gray-500 border-gray-700 hover:text-white  hover:shadow-lg text-black rounded-full w-9 h-9 text-center p-2">
                                     <svg xmlns="http://www.w3.org/2000/svg" className="" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -24,7 +24,7 @@ const Tools = ({ tool }) => {
                                 </button>
                             </div>
 
-                            <img src={img} alt="" className=" w-full object-fill rounded-2xl" />
+                            <img src={img} alt="" className=" w-96 h-96 object-fill rounded-2xl" />
                         </div>
                         <div className="flex-auto justify-evenly">
                             <div className="flex flex-wrap ">

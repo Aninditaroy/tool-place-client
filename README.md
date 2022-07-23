@@ -16,9 +16,6 @@ Live Link [Tool Place](https://tools-place-957b6.web.app/)
 
 * An admin and user can update their profile information using my profile route.
 
-* In my portfolio,you can see my project and my about details.
-
-* In blog page,you can know about some Q/A.
 
 * If an admin logged, an admin sees Manage tools (where admin can delete tools) Manage Orders (admin can delete order which is not paid yet,can update pending status as shipped) All users( where admin can make an user as admin) and add tools(admin can add tool) .
 
