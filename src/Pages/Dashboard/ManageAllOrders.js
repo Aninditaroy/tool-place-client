@@ -6,7 +6,7 @@ import ManageAllOrdersRow from './ManageAllOrdersRow';
 
 
 const ManageAllOrders = () => {
-    const { data: orders, isLoading, refetch } = useQuery('orders', () => fetch('https://secret-peak-21813.herokuapp.com/manageorders', {
+    const { data: orders, isLoading, refetch } = useQuery('orders', () => fetch('https://tool-place-server-1bxqf488v-aninditaroy.vercel.app/manageorders', {
         headers: {
             'content-type': 'application/json',
             authorization: `Bearer ${localStorage.getItem('accessToken')}`

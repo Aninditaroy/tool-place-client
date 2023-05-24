@@ -18,7 +18,7 @@ const MyOrders = () => {
     const [deletingOrder, setDeletingOrder] = useState(null);
     useEffect(() => {
         if (user) {
-            fetch(`https://secret-peak-21813.herokuapp.com/orders?email=${user.email}`, {
+            fetch(`https://tool-place-server-1bxqf488v-aninditaroy.vercel.app/orders?email=${user.email}`, {
                 method: 'GET',
                 headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`

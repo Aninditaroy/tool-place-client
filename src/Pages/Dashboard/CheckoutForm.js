@@ -13,7 +13,7 @@ const CheckoutForm = ({ order }) => {
     const [processing, setProcessing] = useState(false)
     const [transactionId, setTransactionId] = useState('')
     useEffect(() => {
-        fetch("https://secret-peak-21813.herokuapp.com/create-payment-intent", {
+        fetch("https://tool-place-server-1bxqf488v-aninditaroy.vercel.app/create-payment-intent", {
             method: "POST",
             headers: {
                 "content-type": "application/json",
@@ -84,7 +84,7 @@ const CheckoutForm = ({ order }) => {
                 transactionId: paymentIntent.id
             }
 
-            const url = `https://secret-peak-21813.herokuapp.com/orders/${_id}`
+            const url = `https://tool-place-server-1bxqf488v-aninditaroy.vercel.app/orders/${_id}`
             fetch(url, {
                 method: "PATCH",
                 headers: {

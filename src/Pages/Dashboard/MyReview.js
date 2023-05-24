@@ -22,7 +22,7 @@ const MyReview = () => {
         }
 
         //send to  database
-        fetch('https://secret-peak-21813.herokuapp.com/review', {
+        fetch('https://tool-place-server-1bxqf488v-aninditaroy.vercel.app/review', {
             method: "POST",
             headers: {
                 'content-type': 'application/json',

@@ -4,7 +4,7 @@ const DeleteOrderModal = ({ deletingOrder, refetch, setDeletingOrder }) => {
     const { _id } = deletingOrder;
     const handleDelete = (id) => {
         console.log(id)
-        fetch(`https://secret-peak-21813.herokuapp.com/orders/${id}`, {
+        fetch(`https://tool-place-server-1bxqf488v-aninditaroy.vercel.app/orders/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

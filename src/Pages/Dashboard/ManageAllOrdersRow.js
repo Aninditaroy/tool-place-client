@@ -6,7 +6,7 @@ const ManageAllOrdersRow = ({ order, index, refetch, setDeletingOrder }) => {
 
     const handlePending = () => {
         console.log('manage order haha')
-        fetch(`https://secret-peak-21813.herokuapp.com/manageorders/${_id}`, {
+        fetch(`https://tool-place-server-1bxqf488v-aninditaroy.vercel.app/manageorders/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json',

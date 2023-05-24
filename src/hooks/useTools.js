@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 const useTools = () => {
     const [tools, setTools] = useState([]);
     useEffect(() => {
-        fetch('https://secret-peak-21813.herokuapp.com/tool')
+        fetch('https://tool-place-server-1bxqf488v-aninditaroy.vercel.app/tool')
             .then(res => res.json())
             .then(data => {
                 setTools(data)

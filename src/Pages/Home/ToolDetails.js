@@ -38,7 +38,7 @@ const ToolDetails = () => {
         console.log(data.min_order_quantity)
 
         //send to  database
-        fetch('https://secret-peak-21813.herokuapp.com/orders', {
+        fetch('https://tool-place-server-1bxqf488v-aninditaroy.vercel.app/orders', {
             method: "POST",
             headers: {
                 'content-type': 'application/json',

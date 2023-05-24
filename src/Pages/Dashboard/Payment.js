@@ -10,7 +10,7 @@ const stripePromise = loadStripe('pk_test_51L3QUsDxGuRg5LiuXqrLLOn7UNc2ZdwdhkxBS
 
 const Payment = () => {
     const { id } = useParams();
-    const url = `https://secret-peak-21813.herokuapp.com/orders/${id}`;
+    const url = `https://tool-place-server-1bxqf488v-aninditaroy.vercel.app/orders/${id}`;
     const { data: order, isLoading } = useQuery(['order', id], () => fetch(url, {
         method: 'GET',
         headers: {

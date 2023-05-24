@@ -9,7 +9,7 @@ const MyProfile = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
     const [users, setUsers] = useState({});
     useEffect(() => {
-        fetch(`https://secret-peak-21813.herokuapp.com/user/${user?.email}`)
+        fetch(`https://tool-place-server-1bxqf488v-aninditaroy.vercel.app/user/${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setUsers(data)
@@ -31,7 +31,7 @@ const MyProfile = () => {
             phone: data.phoneNumber
         }
 
-        const url = `https://secret-peak-21813.herokuapp.com/user/${user.email}`
+        const url = `https://tool-place-server-1bxqf488v-aninditaroy.vercel.app/user/${user.email}`
         fetch(url, {
             method: "PATCH",
             headers: {
