@@ -6,7 +6,7 @@ const ManageAllOrdersRow = ({ order, index, refetch, setDeletingOrder }) => {
 
     const handlePending = () => {
         console.log('manage order haha')
-        fetch(`https://tool-place-server-1bxqf488v-aninditaroy.vercel.app/manageorders/${_id}`, {
+        fetch(`https://tool-place-server-side.vercel.app/manageorders/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json',

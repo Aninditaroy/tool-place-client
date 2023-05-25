@@ -5,7 +5,7 @@ import divider from '../../Assets/separator.png';
 import ReviewDetails from './ReviewDetails';
 
 const ShowReview = () => {
-    const { data: reviews, isLoading, refetch } = useQuery('reviews', () => fetch('https://tool-place-server-1bxqf488v-aninditaroy.vercel.app/review')
+    const { data: reviews, isLoading, refetch } = useQuery('reviews', () => fetch('https://tool-place-server-side.vercel.app/review')
         .then(res => res.json())
     )
     if (isLoading) {

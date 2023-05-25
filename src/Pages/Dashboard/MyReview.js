@@ -22,7 +22,7 @@ const MyReview = () => {
         }
 
         //send to  database
-        fetch('https://tool-place-server-1bxqf488v-aninditaroy.vercel.app/review', {
+        fetch('https://tool-place-server-side.vercel.app/review', {
             method: "POST",
             headers: {
                 'content-type': 'application/json',

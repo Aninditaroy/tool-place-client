@@ -38,7 +38,7 @@ const ToolDetails = () => {
         console.log(data.min_order_quantity)
 
         //send to  database
-        fetch('https://tool-place-server-1bxqf488v-aninditaroy.vercel.app/orders', {
+        fetch('https://tool-place-server-side.vercel.app/orders', {
             method: "POST",
             headers: {
                 'content-type': 'application/json',

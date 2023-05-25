@@ -6,7 +6,7 @@ import { useQuery } from 'react-query';
 import Loading from '../Shared/Loading';
 
 const ManageTool = () => {
-    const { data: tools, isLoading, refetch } = useQuery('tools', () => fetch('https://tool-place-server-1bxqf488v-aninditaroy.vercel.app/tool', {
+    const { data: tools, isLoading, refetch } = useQuery('tools', () => fetch('https://tool-place-server-side.vercel.app/tool', {
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
         }

@@ -6,7 +6,7 @@ const useToken = user => {
         const email = user?.user?.email;
         const currentUser = { email: email };
         if (email) {
-            fetch(`https://tool-place-server-1bxqf488v-aninditaroy.vercel.app/user/${email}`, {
+            fetch(`https://tool-place-server-side.vercel.app/user/${email}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'
